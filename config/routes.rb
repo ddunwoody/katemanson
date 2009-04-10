@@ -30,6 +30,7 @@ ActionController::Routing::Routes.draw do |map|
   #     admin.resources :products
   #   end
   map.namespace :admin do |admin|
+    admin.connect '', :controller => 'session', :action => 'new'
     admin.resources :session, :only => [:new, :create, :destroy]
   end
 
