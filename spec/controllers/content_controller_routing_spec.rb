@@ -9,10 +9,6 @@ describe 'Routing for', ContentController do
     route_for(:controller => 'content', :action => 'gallery').should == '/gallery'
   end
 
-  it "should map { :contoller => 'content', :action => 'contact' to '/contact' }" do
-    route_for(:controller => 'content', :action => 'contact').should == '/contact'
-  end
-
   it "should map { :contoller => 'content', :action => 'emporium' to '/emporium' }" do
     route_for(:controller => 'content', :action => 'emporium').should == '/emporium'
   end
