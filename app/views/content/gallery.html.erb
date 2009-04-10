@@ -1,6 +1,15 @@
 <% content_for :head do %>
-  <%= javascript_include_tag 'jquery.lightbox.min', 'lightbox-setup' %>
+  <%= javascript_include_tag 'jquery.lightbox.min' %>
   <%= stylesheet_link_tag 'jquery.lightbox.packed' %>
+  <script type="text/javascript">
+    $(function(){
+      $.Lightbox.construct({
+        download_link: false,
+        show_linkback: false,
+        show_info: true
+      });
+    });
+  </script>
 <% end %>
 
 <p>click on the thumbnails to enlarge</p>
