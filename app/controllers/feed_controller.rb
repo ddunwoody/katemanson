@@ -1,4 +1,4 @@
-class FeedController < ApplicationController
+class FeedController < PublicController
   def index
     render :text => Net::HTTP.get_response(
       'pinkhalf.blogspot.com',
