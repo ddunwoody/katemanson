@@ -26,3 +26,8 @@ namespace :deploy do
     task t, :roles => :app do ; end
   end
 end
+
+desc 'Symlink shared artwork folder'
+task :after_update_code do
+  run "ln -s #{shared_path}/artwork #{latest_release}/public/artwork"
+end
