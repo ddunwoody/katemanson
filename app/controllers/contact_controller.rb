@@ -1,6 +1,4 @@
 class ContactController < ApplicationController
-  before_filter :set_nav_context
-
   def index
   end
 
