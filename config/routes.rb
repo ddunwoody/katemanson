@@ -43,10 +43,14 @@ ActionController::Routing::Routes.draw do |map|
   # map.connect ':controller/:action/:id.:format'
 
   map.resources :cartoons, :categories
+
   map.resources :contact, :only => [:index, :create]
   map.resources :feed, :only => [:index]
 
-  map.connect '', :controller => 'content', :action => 'home'
+  map.resources :sessions, :only => [:create, :destroy]
+  map.login 'login', :controller => 'sessions', :action => 'new'
+  map.logout 'logout', :controller => 'sessions', :action => 'destroy'
 
+  map.home '', :controller => 'content', :action => 'home'
   map.connect ':action', :controller => 'content'
 end

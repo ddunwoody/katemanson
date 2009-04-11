@@ -1,4 +1,5 @@
-class CartoonsController < ApplicationController
+class CartoonsController < AdminController
+
   # GET /cartoons
   # GET /cartoons.xml
   def index

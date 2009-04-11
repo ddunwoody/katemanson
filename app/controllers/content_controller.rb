@@ -1,4 +1,4 @@
-class ContentController < ApplicationController
+class ContentController < MenuController
   def home
   end
 

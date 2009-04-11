@@ -1,7 +1,4 @@
-class ContactController < ApplicationController
-  def index
-  end
-
+class ContactController < MenuController
   def create
     begin
       name = params[:name]
