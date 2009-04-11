@@ -18,5 +18,5 @@ desc 'Symlink shared artwork folder and database'
 task :after_update_code do
   run "ln -s #{shared_path}/artwork #{latest_release}/public/artwork"
   run "ln -s #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
-  run "ln -s #{shared_path}/db #{latest_release}/db"
+  run "ln -s #{shared_path}/db/data #{latest_release}/db/data"
 end
