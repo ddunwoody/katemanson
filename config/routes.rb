@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -32,10 +33,6 @@ ActionController::Routing::Routes.draw do |map|
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   #map.root :controller => "welcome"
-  map.connect '', :controller => 'content', :action => 'home'
-  map.resources :contact, :only => [:index, :create]
-  map.resources :feed, :only => [:index]
-  map.connect ':action', :controller => 'content'
 
   # See how all your routes lay out with "rake routes"
 
@@ -43,7 +40,14 @@ ActionController::Routing::Routes.draw do |map|
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing the them or commenting them out if you're using named routes and resources.
 
-  # Commented out by David
   # map.connect ':controller/:action/:id'
   # map.connect ':controller/:action/:id.:format'
+
+  map.resources :categories
+  map.resources :contact, :only => [:index, :create]
+  map.resources :feed, :only => [:index]
+
+  map.connect '', :controller => 'content', :action => 'home'
+
+  map.connect ':action', :controller => 'content'
 end
