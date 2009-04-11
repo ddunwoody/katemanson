@@ -1,12 +1,10 @@
 <p>
-  <b>Name:</b>
-  <%=h @category.name %>
 </p>
-
+  <%=h @category.name %>
 <p>
-  <b>Cartoons:</b>
+<b>Cartoons in this category:</b><br />
   <% @category.cartoons.each do |cartoon| %>
-    <%= link_to cartoon.caption, cartoon_path(cartoon) %>
+    <%= link_to image_tag(cartoon.artwork.url(:thumb)), cartoon_path(cartoon) %>
   <% end %>
 </p>
 

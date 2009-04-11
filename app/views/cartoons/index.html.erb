@@ -9,18 +9,16 @@
 
 <% @cartoons.each do |cartoon| %>
   <tr>
-    <td><%= image_tag cartoon.artwork.url(:thumb) %></td>
-    <td><%=h cartoon.caption %></td>
-    <td><%=h cartoon.category.name %></td>
-    <td><%= link_to 'Show', cartoon %></td>
+    <td><%= link_to image_tag(cartoon.artwork.url(:thumb)), cartoon %></td>
+    <td><%= link_to cartoon.caption, cartoon %></td>
+    <td><%= link_to cartoon.category.name, category_path(cartoon.category) %></td>
     <td><%= link_to 'Edit', edit_cartoon_path(cartoon) %></td>
-    <td><%= link_to 'Destroy', cartoon, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Delete', cartoon, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New cartoon', new_cartoon_path %>
-<br />
+<%= link_to 'New cartoon', new_cartoon_path %><br />
 <%= link_to 'Manage categories', categories_path %>
