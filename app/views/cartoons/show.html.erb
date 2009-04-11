@@ -2,11 +2,16 @@
   <b>Caption:</b>
   <%=h @cartoon.caption %>
 </p>
+
 <p>
   <b>Category:</b>
   <%=h @cartoon.category.name %>
 </p>
 
+<p>
+  <b>Artwork:</b>
+  <%= image_tag @cartoon.artwork.url(:gallery) %>
+</p>
 
 <%= link_to 'Edit', edit_cartoon_path(@cartoon) %> |
 <%= link_to 'Back', cartoons_path %>

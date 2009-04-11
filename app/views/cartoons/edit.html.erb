@@ -1,6 +1,6 @@
 <h1>Editing cartoon</h1>
 
-<% form_for(@cartoon) do |f| %>
+<% form_for @cartoon, :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -10,6 +10,11 @@
   <p>
     <%= f.label :category %><br />
     <%= collection_select :cartoon, :category_id, Category.find(:all), :id, :name %>
+  </p>
+  <p>
+    <%= f.label :artwork %><br />
+    <%= image_tag @cartoon.artwork.url(:gallery) %>
+    <%= f.file_field :artwork %>
   </p>
   <p>
     <%= f.submit 'Update' %>

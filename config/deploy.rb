@@ -16,7 +16,6 @@ end
 
 desc 'Symlink shared and/or secure resources'
 task :after_update_code do
-  run "ln -s #{shared_path}/artwork #{latest_release}/public/artwork"
   run "ln -s #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
   run "ln -s #{shared_path}/config/admin.yml #{latest_release}/config/admin.yml"
   run "ln -s #{shared_path}/db/data #{latest_release}/db/data"
