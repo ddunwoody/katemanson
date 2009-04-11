@@ -2,6 +2,10 @@
   <b>Caption:</b>
   <%=h @cartoon.caption %>
 </p>
+<p>
+  <b>Category:</b>
+  <%=h @cartoon.category.name %>
+</p>
 
 
 <%= link_to 'Edit', edit_cartoon_path(@cartoon) %> |

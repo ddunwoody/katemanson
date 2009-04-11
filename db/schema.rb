@@ -9,12 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090411143353) do
+ActiveRecord::Schema.define(:version => 20090411163244) do
 
   create_table "cartoons", :force => true do |t|
     t.string   "caption"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "category_id"
   end
 
   create_table "categories", :force => true do |t|

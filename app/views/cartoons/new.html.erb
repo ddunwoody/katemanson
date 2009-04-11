@@ -8,6 +8,10 @@
     <%= f.text_field :caption %>
   </p>
   <p>
+    <%= f.label :category %><br />
+    <%= collection_select :cartoon, :category_id, Category.find(:all), :id, :name %>
+  </p>
+  <p>
     <%= f.submit 'Create' %>
   </p>
 <% end %>

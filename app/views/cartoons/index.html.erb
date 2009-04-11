@@ -3,11 +3,13 @@
 <table>
   <tr>
     <th>Caption</th>
+    <th>Category</th>
   </tr>
 
 <% @cartoons.each do |cartoon| %>
   <tr>
     <td><%=h cartoon.caption %></td>
+    <td><%=h cartoon.category.name %></td>
     <td><%= link_to 'Show', cartoon %></td>
     <td><%= link_to 'Edit', edit_cartoon_path(cartoon) %></td>
     <td><%= link_to 'Destroy', cartoon, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -18,3 +20,5 @@
 <br />
 
 <%= link_to 'New cartoon', new_cartoon_path %>
+<br />
+<%= link_to 'Manage categories', categories_path %>
