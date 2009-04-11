@@ -2,12 +2,14 @@
 
 <table>
   <tr>
+    <th>Artwork</th>
     <th>Caption</th>
     <th>Category</th>
   </tr>
 
 <% @cartoons.each do |cartoon| %>
   <tr>
+    <td><%= image_tag cartoon.artwork.url(:thumb) %></td>
     <td><%=h cartoon.caption %></td>
     <td><%=h cartoon.category.name %></td>
     <td><%= link_to 'Show', cartoon %></td>
