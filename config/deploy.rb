@@ -14,7 +14,8 @@ namespace :deploy do
   end
 end
 
-desc 'Symlink shared artwork folder'
+desc 'Symlink shared artwork folder and database.yml'
 task :after_update_code do
   run "ln -s #{shared_path}/artwork #{latest_release}/public/artwork"
+  run "ln -s #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
 end
