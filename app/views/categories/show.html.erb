@@ -3,6 +3,12 @@
   <%=h @category.name %>
 </p>
 
+<p>
+  <b>Cartoons:</b>
+  <% @category.cartoons.each do |cartoon| %>
+    <%= link_to cartoon.caption, cartoon_path(cartoon) %>
+  <% end %>
+</p>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
