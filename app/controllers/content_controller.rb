@@ -1,4 +1,4 @@
-class ContentController < PublicController
+class ContentController < ApplicationController
   def home
   end
 

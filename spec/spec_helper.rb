@@ -10,10 +10,9 @@ Spec::Runner.configure do |config|
   # lines, delete config/database.yml and disable :active_record
   # in your config/boot.rb
 
-  # Commented out by David
-  #config.use_transactional_fixtures = true
-  #config.use_instantiated_fixtures  = false
-  #config.fixture_path = RAILS_ROOT + '/spec/fixtures/'
+  config.use_transactional_fixtures = true
+  config.use_instantiated_fixtures  = false
+  config.fixture_path = RAILS_ROOT + '/spec/fixtures/'
 
   # == Fixtures
   #
