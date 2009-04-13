@@ -42,7 +42,7 @@ ActionController::Routing::Routes.draw do |map|
   # map.connect ':controller/:action/:id'
   # map.connect ':controller/:action/:id.:format'
 
-  map.resources :cartoons, :categories
+  map.resources :cartoons, :categories, :active_scaffold => true
 
   map.resources :contact, :only => [:index, :create]
   map.resources :feed, :only => [:index]
