@@ -1,3 +1,5 @@
 class CartoonsController < AdminController
-  active_scaffold :cartoon
+  active_scaffold :cartoon do |config|
+#    config.actions.exclude :nested
+  end
 end
