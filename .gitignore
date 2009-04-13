@@ -4,6 +4,7 @@ db/data
 doc
 log
 nbproject
+public/artworks
 public/system
 tmp
 *.swp
