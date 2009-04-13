@@ -9,4 +9,8 @@ class Cartoon < ActiveRecord::Base
                     :path => ':rails_root/public/:attachment/:id/:style/:basename.:extension'
   validates_attachment_presence :artwork
   validates_attachment_content_type :artwork, :content_type => ['image/jpeg', 'image/png']
+
+  def to_label
+    caption ? caption : artwork.original_filename
+  end
 end
