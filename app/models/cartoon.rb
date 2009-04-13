@@ -4,7 +4,7 @@ class Cartoon < ActiveRecord::Base
   validates_presence_of :category
   validates_associated :category
 
-  has_attached_file :artwork, :styles => { :gallery => '640x480>', :thumb => '100x100>' },
+  has_attached_file :artwork, :styles => { :medium => '640x480>', :thumb => '100x100>' },
                     :url => '/:attachment/:id/:style/:basename.:extension',
                     :path => ':rails_root/public/:attachment/:id/:style/:basename.:extension'
   validates_attachment_presence :artwork

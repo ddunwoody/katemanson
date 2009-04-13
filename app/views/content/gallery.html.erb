@@ -20,7 +20,7 @@
     <ul>
       <% category.cartoons.each do |cartoon| %>
         <li>
-          <a rel="lightbox-<%= category.name %>" title="<%=h cartoon.caption %>" href="<%= cartoon.artwork.url(:gallery) %>">
+          <a rel="lightbox-<%= category.name %>" title="<%=h cartoon.caption %>" href="<%= cartoon.artwork.url(:medium) %>">
             <img src="<%= cartoon.artwork.url(:thumb) %>" />
           </a>
         </li>
