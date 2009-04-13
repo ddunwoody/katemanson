@@ -12,6 +12,10 @@
   </script>
 <% end %>
 
+<% if admin? %>
+  <div align="right"><%= link_to 'Edit', cartoons_path %></div>
+<% end %>
+
 <p>click on the thumbnails to enlarge</p>
 
 <% Category.find(:all).each do |category| %>

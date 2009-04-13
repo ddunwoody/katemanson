@@ -17,6 +17,12 @@
 
       <div class="blackbox">
         <div class="content">
+          <% if flash[:notice] %>
+            <p style="color: green"><%= flash[:notice] %></p>
+          <% end %>
+          <% if flash[:warning] %>
+            <p style="color: red"><%= flash[:warning] %></p>
+          <% end %>
           <%= yield %>
           <div class="copyright">All images copyright Kate Manson &copy;2009</div>
         </div>
