@@ -17,6 +17,7 @@ class CategoriesController < AdminController
 
   def create
     @category = Category.new params[:category]
+
     if @category.save
       flash[:notice] = 'Category was successfully created.'
       redirect_to @category
