@@ -20,16 +20,13 @@
 
 <% Category.find(:all).each do |category| %>
   <h2><%= category.name %></h2>
-  <div class="lightbox">
-    <ul>
-      <% category.cartoons.each do |cartoon| %>
-        <li>
-          <a rel="lightbox-<%= category.name %>" title="<%=h cartoon.caption %>" href="<%= cartoon.artwork.url(:medium) %>">
-            <img src="<%= cartoon.artwork.url(:thumb) %>" />
-          </a>
-        </li>
-      <% end %>
-    </ul>
-  </div>
+    <% category.cartoons.each do |cartoon| %>
+      <div class="image">
+        <a rel="lightbox-<%= category.name %>" title="<%=h cartoon.caption %>" href="<%= cartoon.artwork.url(:medium) %>">
+          <img src="<%= cartoon.artwork.url(:thumb) %>" />
+        </a>
+        <div class="caption"><a href="/ecards/<%=cartoon.id%>">send as e-card</a></div>
+      </div>
+    <% end %>
   <div class="clear" />
 <% end %>

@@ -46,30 +46,28 @@ textarea {
     width: 90px;
 }
 
-.lightbox li {
-    display:inline;
+div.image {
+  float: left;
+  border: 1px solid #999999;
+  padding: 5px;
+  margin: 5px;
+  background-color: #ECECEC;
 }
 
-.lightbox a {
-    background-color: #ECECEC;
-    border: 1px solid #999999;
-    display: block;
-    float: left;
-    margin: 5px;
-    padding: 5px 5px 10px;
+div.image:hover {
+  background-color: #FFFFFF;
+  border: 1px solid #333333;
 }
 
-.lightbox a:hover {
-    background-color: #FFFFFF;
-    border: 1px solid #333333;
+.image img {
+  border: 1px dotted #999999;
+  display: block;
+  margin: auto;
 }
 
-.lightbox a img {
-    border: 1px solid #999999;
-}
-
-.lightbox a.lightbox-enabled img {
-    border: 1px dotted #999999;
+.image .caption {
+  font-size: 0.7em;
+  text-align: center;
 }
 
 table.menu {
