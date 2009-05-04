@@ -45,6 +45,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :cartoons, :categories
 
   map.resources :contact, :only => [:index, :create]
+  map.resources :cards, :only => [:edit, :create]
   map.resources :feed, :only => [:index]
 
   map.resources :sessions, :only => [:create, :destroy]

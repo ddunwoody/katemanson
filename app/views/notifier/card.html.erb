@@ -1,0 +1,17 @@
+<div><%=@recipient_name%>,</div>
+
+<div style="margin-top: 1em"><%=@sender_name%> has sent you an e-card from <b><a href="http://www.katemanson.co.uk/">www.katemanson.co.uk</a></b></div>
+
+<%
+  artwork= Cartoon.find(@cartoon_id).artwork
+  geometry = Paperclip::Geometry.from_file(artwork.path)
+%>
+
+<div><img src="http://www.katemanson.co.uk<%= artwork.url(:medium) %>" alt="Please enable images to see the cartoon"
+  width=<%= geometry.width.to_i %> height=<%= geometry.width.to_i %>/>.</div>
+
+<% @message.each_line do |line| %>
+  <div><%=line.strip.chomp('\n')%></div>
+<% end %>
+
+<div style="margin-top: 3em; color: gray; font-size: 0.8em">All images copyright Kate Manson &copy;2009</div>

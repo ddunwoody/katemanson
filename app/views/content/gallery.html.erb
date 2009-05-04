@@ -25,7 +25,7 @@
         <a rel="lightbox-<%= category.name %>" title="<%=h cartoon.caption %>" href="<%= cartoon.artwork.url(:medium) %>">
           <img src="<%= cartoon.artwork.url(:thumb) %>" />
         </a>
-        <div class="caption"><a href="/ecards/<%=cartoon.id%>">send as e-card</a></div>
+        <div class="caption"><%= link_to 'send as e-card', edit_card_path(cartoon) %></div>
       </div>
     <% end %>
   <div class="clear" />

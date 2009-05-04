@@ -11,7 +11,8 @@ Sending email from '#{name} <#{email}>' to '#{CONTACT_EMAIL}' with body:
 EOF
       Notifier.deliver_contact_message name, email, subject, message
       render :text => 'Your message has been sent.'
-    rescue
+    rescue Exception => e
+      logger.error e
       render :text => <<EOF
 Sorry, there has been a problem sending your message - the site owner has been
 notified.  Please try again later.
