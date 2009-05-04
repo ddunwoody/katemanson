@@ -16,6 +16,7 @@ class Notifier < ActionMailer::Base
     subject "#{sender_name} has sent you an e-card from www.katemanson.co.uk"
     # Email body substitutions go here
     content_type 'text/html'
-    body :cartoon_id => cartoon_id, :sender_name => sender_name, :recipient_name => recipient_name, :message => message
+    cartoon = Cartoon.find(cartoon_id)
+    body :cartoon => cartoon, :geometry => Paperclip::Geometry.from_file(cartoon.artwork.path), :sender_name => sender_name, :recipient_name => recipient_name, :message => message
   end
 end

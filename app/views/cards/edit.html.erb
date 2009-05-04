@@ -25,8 +25,11 @@
 <h2>Send an e-card</h2>
 
 <form class="ecard" id="form" method="post" action="<%= cards_path %>">
-  <input name="cartoon_id" type="hidden" value="<%= params[:id] %>" />
-  <div><%= image_tag Cartoon.find(params[:id]).artwork.url(:medium) %></div>
+  <input name="cartoon_id" type="hidden" value="<%= @cartoon.id %>" />
+  <div><%= image_tag @cartoon.artwork.url(:medium) %></div>
+  <% unless @cartoon.caption.blank? %>
+    <div class="caption"><%= @cartoon.caption %></div>
+  <% end %>
   <fieldset>
     <legend>Sender details</legend>
     <p>

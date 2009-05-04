@@ -22,6 +22,10 @@ class CardsController < MenuController
     end
   end
 
+  def edit
+    @cartoon = Cartoon.find(params[:id])
+  end
+
   private
 
   def set_nav_context
