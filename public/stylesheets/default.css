@@ -18,7 +18,7 @@ img {
     border: hidden;
 }
 
-label{
+label {
     float: left;
     width: 100px;
     font-weight: bold;
@@ -30,12 +30,12 @@ label.error {
     vertical-align: top;
 }
 
-input, textarea{
+input, textarea {
     width: 480px;
     margin-bottom: 5px;
 }
 
-textarea{
+textarea {
     width: 480px;
     height: 240px;
 }
@@ -58,6 +58,7 @@ textarea{
     margin: 5px;
     padding: 5px 5px 10px;
 }
+
 .lightbox a:hover {
     background-color: #FFFFFF;
     border: 1px solid #333333;
